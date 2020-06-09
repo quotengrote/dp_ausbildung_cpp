@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:nsd="https://structorizer.fisch.lu" version="3.30-02" preRepeat="until " postFor="to" preReturn="return" postForIn="in" preWhile="while " output="OUTPUT" input="INPUT" preFor="for" preExit="exit" preLeave="leave" ignoreCase="true" preThrow="throw" preForIn="foreach" stepFor="by" author="mg" created="2020-01-09" changedby="mg" changed="2020-01-09" origin="Structorizer 3.30-02" text="&#34;Widerstand&#34;" comment="" color="ffffff" type="program" style="nice">
+	<children>
+		<instruction text="&#34;Deklaration r1, r2, r3, ergebnis&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+		<instruction text="&#34;Deklaration rp, abbruch&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+		<instruction text="&#34;eingabe r1 r2 r3 rp&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+		<case text="&#34;rp&#34;,&#34;R&#34;,&#34;P&#34;,&#34;default&#34;" comment="" color="ffffff" disabled="0">
+			<qCase>
+				<instruction text="&#34;ergebnis=r1+r2+r2&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+			</qCase>
+			<qCase>
+				<instruction text="&#34;ergebnis=1/((1/r1)+(1/r2)+(1/r3))&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+			</qCase>
+			<qCase>
+				<instruction text="&#34;&#34;&#34;Falsche Auswahl (nur R oder P)&#34;&#34;&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+			</qCase>
+		</case>
+		<instruction text="&#34;ausgabe ergebnis&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+	</children>
+</root>

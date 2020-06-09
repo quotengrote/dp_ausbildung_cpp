@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:nsd="https://structorizer.fisch.lu" version="3.30-02" preRepeat="until " postFor="to" preReturn="return" postForIn="in" preWhile="while " output="OUTPUT" input="INPUT" preFor="for" preExit="exit" preLeave="leave" ignoreCase="true" preThrow="throw" preForIn="foreach" stepFor="by" author="mg" created="2020-06-09" changedby="mg" changed="2020-06-09" origin="Structorizer 3.30-02" text="&#34;for-v2&#34;" comment="&#34;&#34;" color="ffffff" type="program" style="nice">
+	<children>
+		<instruction text="&#34;deklaration variablen&#34;,&#34;	double anfangswert=0, endwert=0, schrittweite=0;&#34;,&#34;	double wert_kw=0;&#34;,&#34;	double ausgabe=0;&#34;,&#34;	int abbrechen=0;&#34;,&#34;	char auswahl;&#34;,&#34;	double umrechnungsfaktor=1.35962173;&#34;" comment="&#34;&#34;" color="ffffff" rotated="0" disabled="0"></instruction>
+		<while text="&#34;while abbrechen !=1&#34;" comment="&#34;&#34;" color="ffffff" disabled="0">
+			<qWhile>
+				<instruction text="&#34;eingabe und abfangen eingabewerte 3x&#34;" comment="&#34;&#34;" color="ffffff" rotated="0" disabled="0"></instruction>
+				<for text="&#34;for (anfangswert; endwert; ops)&#34;" comment="&#34;&#34;" counterVar="dummy_counter" startValue="(anfangswert; endwert; ops)" stepConst="1" style="FREETEXT" color="ffffff" disabled="0">
+					<qFor>
+						<instruction text="&#34;berechnung&#34;,&#34;wert_kw*umrechungsfaktor&#34;,&#34;ausgabe&#34;" comment="&#34;&#34;" color="ffffff" rotated="0" disabled="0"></instruction>
+					</qFor>
+				</for>
+				<instruction text="&#34;Abfrage abbruch&#34;" comment="&#34;&#34;" color="ffffff" rotated="0" disabled="0"></instruction>
+			</qWhile>
+		</while>
+	</children>
+</root>
