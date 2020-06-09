@@ -16,10 +16,13 @@ int main()
 {
 	double wert_kw=50;
 	double ausgabe=0;
+	double ps=0;
+	cout<<"Kw    "<<" "<<"PS: "<<endl;
 
 	for (wert_kw=50; wert_kw<=70; wert_kw++)
 	{
-		cout<<wert_kw*1.36<<endl;
+		ps=wert_kw*1.36;
+		cout<<"Kw: "<<wert_kw<<" "<<"PS: "<< ps<<endl;
 	}
 
 	getchar();

@@ -19,9 +19,11 @@ int main()
 	double anfangswert=0, endwert=0, schrittweite=0;
 	double wert_kw=0;
 	double ausgabe=0;
+	double ausgabe_kw=0;
 	int abbrechen=0;
 	char auswahl;
 	double umrechnungsfaktor=1.35962173;
+	double ps=0;
 // schleife ausfuehrung
 	while (abbrechen==0)
 		{
@@ -60,9 +62,13 @@ int main()
 					break;
 				}
 // berechnung
+		cout<<"Kw\t\t"<<" "<<"PS: "<<endl;
+
 		for (wert_kw=anfangswert; wert_kw<=endwert; wert_kw)
 			{
-				cout<<endl<<wert_kw*umrechnungsfaktor<<fixed<< setprecision(9); // (9) gibt die nachkommastellen an
+				ausgabe_kw=wert_kw*umrechnungsfaktor;
+								ps=wert_kw*1.36;
+				cout<<"Kw: "<<ausgabe_kw<<"\t"<<"PS: "<< ps<<endl<<fixed<< setprecision(9); // (9) gibt die nachkommastellen an;
 				wert_kw=wert_kw+schrittweite;
 			}
 		cout<<endl<<"Abbrechen? (J)a/(N)ein"<<endl;
