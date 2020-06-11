@@ -66,8 +66,8 @@ int main()
 
 		for (wert_kw=anfangswert; wert_kw<=endwert; wert_kw=wert_kw+schrittweite)
 			{
-				ausgabe_kw=wert_kw*umrechnungsfaktor;
-								ps=wert_kw*1.36;
+				ausgabe_kw=wert_kw;
+								ps=wert_kw*umrechnungsfaktor;
 				cout<<"Kw: "<<ausgabe_kw<<"\t"<<"PS: "<< ps<<endl<<fixed<< setprecision(9); // (9) gibt die nachkommastellen an;
 			}
 		cout<<endl<<"Abbrechen? (J)a/(N)ein"<<endl;
