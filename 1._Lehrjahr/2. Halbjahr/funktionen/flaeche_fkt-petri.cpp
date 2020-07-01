@@ -35,7 +35,7 @@ int main()
  {
   float fl;
   fl = l * b;
-  return fl;
+  return fl; //return gibt den inhalt der Variable fl zurück
  }
   // Funktion ausgabe
  void ausgabe(float f)
