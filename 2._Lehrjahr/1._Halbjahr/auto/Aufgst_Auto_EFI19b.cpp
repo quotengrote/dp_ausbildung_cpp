@@ -26,7 +26,7 @@ Globale Variablen sind grunds?tzlich nicht erlaubt.
 Erlaubte Hilfsmittel:
 c++-Entwicklungsumgebung (c++-Trainer bzw. small-cpp)
 
-
+Wiederholen als Funktion
 
 
 */
@@ -39,25 +39,27 @@ using namespace std;
 
 float eingabe_f(string text);
 char eingabe_c(string text);
-float berechnung_durchschnitt(float zeit_h, float strecke);
-float berechnung_verbrauch(float liter, float strecke);
+void berechnung_durchschnitt(float schrittweite, float zeit_h, float strecke_beginn, float strecke_ende);
+void berechnung_verbrauch(float schrittweite,float liter, float strecke_beginn, float stecke_ende);
 void ausgabe(float text, string beschreibung);
 float a=0;
 string auswahl;
 
 int main()
 {
-    auswahl = eingabe_c("Auswahl: Verbrauch(V) oder Durchschnitt(D)");
-
-    if (auswahl == "V")
+    while (1== 1)
     {
-      ausgabe(berechnung_verbrauch(eingabe_f("Verbrauch in Litern"),eingabe_f("Strecke in Km"))," l/100km");
-    }
-    else
-    {
-      ausgabe(berechnung_durchschnitt(eingabe_f("Strecke in Km"),eingabe_f("Zeit in Stunden"))," km/h");
-    }
+      auswahl = eingabe_c("Auswahl: Verbrauch(V) oder Durchschnitt(D)");
 
+      if (auswahl == "V")
+      {
+        berechnung_verbrauch(eingabe_f("Schrittweite"),eingabe_f("Verbrauch in Litern"),eingabe_f("Strecke in Km - Beginn"),eingabe_f("Strecke in Km - Ende"));
+      }
+      else
+      {
+        berechnung_durchschnitt(eingabe_f("Schrittweite"),eingabe_f("Zeit in Stunden"),eingabe_f("Strecke in Km - Beginn"),eingabe_f("Strecke in Km - Ende"));
+      }
+  }
 	getchar();
 	return 0;
 }
@@ -83,21 +85,29 @@ char eingabe_c(string text)
 }
 
 
-float berechnung_durchschnitt(float zeit_h, float strecke)
+void berechnung_durchschnitt(float schrittweite, float zeit_h, float strecke_beginn, float strecke_ende)
 {
   float geschwindigkeit;
-  geschwindigkeit = (strecke / zeit_h)*100;
-  return geschwindigkeit;
+  float strecke=0;
+  for (strecke=strecke_beginn;strecke<=strecke_ende;strecke=strecke+schrittweite)
+    {
+    ausgabe(strecke, "km");
+    ausgabe(geschwindigkeit = (strecke / zeit_h)," km/h");
+    }
 }
 
-float berechnung_verbrauch(float liter, float strecke)
+void berechnung_verbrauch(float schrittweite, float liter, float strecke_beginn, float strecke_ende)
 {
-  float verbrauch;
-  verbrauch = (liter / strecke) * 100;
-  return verbrauch;
+  float verbrauch=0;
+  float strecke=0;
+  for (strecke=strecke_beginn;strecke<=strecke_ende;strecke=strecke+schrittweite)
+  {
+    ausgabe(strecke, "km");
+    ausgabe(verbrauch = (liter / strecke) * 100," l/100km");
+  }
 }
 
 void ausgabe(float text, string beschreibung)
 {
-  cout<<text<<beschreibung;
+  cout<<text<<beschreibung<<endl;
 }
