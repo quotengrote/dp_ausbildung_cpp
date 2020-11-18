@@ -7,9 +7,8 @@ int main()
 {
   float laenge, breite, flaeche;
  
-  eingabe(&laenge,&breite); //adresse an variable an pointer übergeben und der schreibt 
-  					//dann "in" länge rein,  ALSO Pointer zeigt auf Adresse und nicht andersrum
-  					// lange und breite sind normale variablen auf die gezeigt wird
+  eingabe(&laenge,&breite);
+    
   flaeche=berechne(laenge,breite);  
   
   ausgabe(flaeche);
@@ -18,12 +17,12 @@ int main()
   return 0;
 }
 
-  void eingabe(float *px, float *py) //deklariere pointer, da erste stelle zeigt er in zeile 10 auf &länge, in z23 wird der pointer beschrieben, daher enthält &laenge dann den inhalt des pointers
+  void eingabe(float *px, float *py)
   {
    cout<<"Bitte Länge eingeben: ";
-   cin>>*px;  					//hier wird der Zeiger dereferenziert
+   cin>>*px;
    cout<<"Bitte Breite eingeben: ";
-   cin>>*py;
+   cin>>*py;   
   }
         
  float berechne(float l,float b)
