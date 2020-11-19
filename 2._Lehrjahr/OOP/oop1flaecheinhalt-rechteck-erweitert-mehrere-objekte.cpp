@@ -84,12 +84,20 @@ int main(){
 	float brei=0;
 	string ba;
 	string rn;
+	int anzahl_raeume=0;
+	int i=0;
+	
+	cout<<"anzahl raeume eingeben: \n";
+	cin>>anzahl_raeume;
 	
 	//Instanziierung des Objektes; Aufruf des Konstruktors
 	//erst Klasse, dann Objekt; vergleichbar Datentyp, 
-	//hier Größe 12 Byte da 3x float in Klasse
-	Raum raum1; //<Klasse> <objekt>;
+	//hier Größe 12* Byte da 3x float in Klasse
+	Raum raum[100]; //<Klasse> <objekt>;
+/* hier muss irgendwas mit new rein laut Petri, da die Zahl hinter Raum eine Konstante sein muss */
 	
+	//Schleife für die Eingabe und Aufruf der Methoden
+	for(i=0;i<anzahl_raeume;i++){	
 	//Eingaben und Zuweisung an lokale Variablen
 	cout<<"laenge eingeben: \n";
 	cin>>lae;
@@ -101,23 +109,28 @@ int main(){
 	cin>>rn; 	
 		
 	//Aufruf der Methoden mit den lokalen Variablen 
-	//an das Objekt: raum1, der Klasse Raum
-	raum1.set_laenge(lae);
-	raum1.set_breite(brei);
-	raum1.set_belagart(ba);			
-	raum1.set_raumname(rn);	
+	//an das Objekt: raum[i], der Klasse Raum
+	raum[i].set_laenge(lae);
+	raum[i].set_breite(brei);
+	raum[i].set_belagart(ba);			
+	raum[i].set_raumname(rn);	
 				
 	//Aufruf der Methode berechnung, 
 	//dieser wird kein Wert übergeben da sie den 
 	//Rückgabewert aus den Klassenvariablen/attributen berechnet
-	raum1.berechnung();
+	raum[i].berechnung();
+	}
+	//Tabellenüberschriften
+	cout<<"\nRaumname\t"<<"Laenge\t"<<"Breite\t"<<"Flaeche\t"<<"Belag\n";
 	
+	//Schleife für die Ausgabe
+	for(i=0;i<anzahl_raeume;i++){	
 	//Ausgabe mit Titelzeile, Werte werden mit den get_* Funktionen aufgerufen
-	cout<<"\nRaumname\t"<<"Laenge\t"<<"Breite\t"<<"Flaeche\t"<<"Belag\n"<<raum1.get_raumname()<<"\t\t"<<raum1.get_laenge()<<"\t"<<raum1.get_breite()<<"\t"<<raum1.get_flaeche()<<"\t"<<raum1.get_belagart();			//Ausgabe Ergebnis
+	cout<<raum[i].get_raumname()<<"\t\t"<<raum[i].get_laenge()<<"\t"<<raum[i].get_breite()<<"\t"<<raum[i].get_flaeche()<<"\t"<<raum[i].get_belagart()<<endl;			//Ausgabe Ergebnis
 	
-	//Destruktor aufrufen für das Objekt raum1, der Klasse Raum; damit wird raum1 gelöscht/freigegeben
-	raum1.~Raum(); 
-
+	//Destruktor aufrufen für die Objekte raum[i], der Klasse Raum; damit werden raum[i] gelöscht/freigegeben
+	raum[i].~Raum(); 
+	}
 	getchar();
 	return 0;
 }
